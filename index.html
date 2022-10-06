@@ -33,12 +33,21 @@
             <img class="logo" src="/assets/joker.png" alt="logo" />
             <p class="title">Reddit Me This, Batman</p>
             <nav>
-                <a href="/post/index.html">Make A Post</a>
+                <a href="/post/">Make A Post</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
-        <main></main>
+        <main>
+            <form id="search-form" class="inline">
+                <input name="name" placeholder="search for a post name" />
+                <button>🔍</button>
+            </form>
+
+            <p id="error-display" class="error"></p>
+
+            <ul id="post-list"></ul>
+        </main>
         <footer>
             <a href="https://www.flaticon.com/free-icons/joker" title="joker icons"
                 >Joker icons created by photo3idea_studio - Flaticon</a

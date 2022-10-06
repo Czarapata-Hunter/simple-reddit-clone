@@ -33,6 +33,32 @@ export async function createPost(post) {
     return await client.from('reddit_clone').insert(post).single();
 }
 
+export async function getPosts(name) {
+    let query = client.from('reddit_clone').select('*').limit(100);
+
+    if (name) {
+        query = query.ilike('name', `%${name}%`);
+    }
+
+    return await query;
+}
+
+// Will need to add comment table info later!
+export async function getPost(id) {
+    return await client.from('reddit_clone').select('*').eq('id', id).order('created_at').single();
+}
+
+/* const obj = {
+    id: 5,
+    name: 'Hunter',
+    description: 'description',
+    created_at: 'timestamp',
+    image_url: 'https://',
+    user_id: '12345-6idkjg',
+    category: 'funny',
+    //Will need to add Comment Part Later! 
+}; */
+
 //Storage Function
 
 export async function uploadImage(bucketName, imagePath, imageFile) {
