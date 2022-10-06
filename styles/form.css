@@ -62,3 +62,12 @@ form button {
 form button:disabled {
     opacity: 0.5;
 }
+
+form img {
+    height: 100px;
+    width: 100px;
+}
+
+header {
+    color: rgb(96, 190, 96);
+}

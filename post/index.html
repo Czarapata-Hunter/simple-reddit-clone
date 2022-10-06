@@ -31,8 +31,8 @@
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/favorite-place-logo.png" alt="logo" />
-            <p class="title">Make A Post</p>
+            <img class="logo" src="/assets/joker.png" alt="logo" />
+            <p class="title">Reddit Me This, Batman</p>
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="/auth">Sign Out</a>
@@ -40,7 +40,7 @@
         </header>
 
         <main>
-            <form id="place-form">
+            <form id="post-form">
                 <label>
                     <div>Name</div>
                     <input name="name" required placeholder="Name of Post " />
@@ -68,16 +68,10 @@
                         id="image-input"
                         name="image"
                         type="file"
-                        required
                         placeholder="upload an image..."
                     />
                 </label>
-                <img
-                    id="preview"
-                    class="preview"
-                    alt="place preview"
-                    src="/assets/favorite-place-logo.png"
-                />
+                <img id="preview" class="preview" alt="place preview" src="/assets/joker.png" />
 
                 <button>Add Place</button>
 
