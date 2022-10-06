@@ -45,19 +45,17 @@ export async function getPosts(name) {
 
 // Will need to add comment table info later!
 export async function getPost(id) {
-    return await client.from('reddit_clone').select('*').eq('id', id).order('created_at').single();
+    return await client
+        .from('reddit_clone')
+        .select('*, comments(*)')
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
+        .single();
 }
 
-/* const obj = {
-    id: 5,
-    name: 'Hunter',
-    description: 'description',
-    created_at: 'timestamp',
-    image_url: 'https://',
-    user_id: '12345-6idkjg',
-    category: 'funny',
-    //Will need to add Comment Part Later! 
-}; */
+export async function createComment(comment) {
+    return client.from('comments').insert(comment).single();
+}
 
 //Storage Function
 

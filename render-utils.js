@@ -2,7 +2,7 @@ export function renderPost(post) {
     const li = document.createElement('li');
 
     const a = document.createElement('a');
-    a.href = `/post/?id=${post.id}`;
+    a.href = `/post-page/?id=${post.id}`;
 
     const h2 = document.createElement('h2');
     h2.textContent = post.name;
@@ -29,4 +29,13 @@ function getCategoryEmoji(category) {
     if (category === 'gaming') return '🎮';
     if (category === 'movies') return '🎥';
     return '⁉️';
+}
+
+export function renderComment(comment, userId) {
+    const li = document.createElement('li');
+    if (comment.user_id === userId) {
+        li.classList.add('self');
+    }
+    li.textContent = comment.text;
+    return li;
 }
