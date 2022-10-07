@@ -42,7 +42,7 @@ export async function getPosts(name) {
 
     return await query;
 }
-
+// Adding comment for Netlify
 // Will need to add comment table info later!
 export async function getPost(id) {
     return await client
