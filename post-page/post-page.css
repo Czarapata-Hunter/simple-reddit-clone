@@ -1,0 +1,46 @@
+main {
+    display: grid;
+    grid-template-rows: auto 2px auto 1fr;
+    gap: 10px;
+}
+
+.place-summary {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    grid-template-rows: 30px 60px;
+    grid-template-areas:
+        'image name'
+        'image bio';
+    row-gap: 5px;
+    column-gap: 20px;
+    background: var(--offset-color);
+    box-shadow: var(--box-shadow);
+}
+
+#place-name {
+    grid-area: name;
+    margin: 0;
+    align-self: center;
+}
+
+#place-image {
+    grid-area: image;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+#place-bio {
+    grid-area: bio;
+    margin: 0;
+}
+
+#comment-list li {
+    background: grey;
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--placeholder-color);
+}
+
+#comment-list li.self {
+    background: lightblue;
+}
